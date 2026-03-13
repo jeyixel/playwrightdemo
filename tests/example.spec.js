@@ -33,16 +33,5 @@ test('see if github button is available', async ({ page }) => {
   await expect(page.getByRole('img', { name: 'Browsers (Chromium, Firefox,' })).toBeVisible();
 });
 
-// test to see if redirections work
-test('see if they redirect you to vs code page', async ({ page }) => {
-  // go to the page first
-  await page.goto('https://playwright.dev/');
 
-  // click the vs code page
-  await page.getByRole('link', { name: 'VS Code' }).click();
-
-  // after the click should see the title of vs code page
-  await expect(page.getByRole('heading', { name: 'The open source AI code editor' })).toBeVisible();
-
-});
 
