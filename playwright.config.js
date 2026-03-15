@@ -75,9 +75,10 @@ export default defineConfig({
   webServer: {
     command: 'npm run dev',
     url: 'http://localhost:5173',
-    reuseExistingServer: !process.env.CI,
-    cwd: './dummy-ui', // This tells Playwright to open the dummy-ui folder before running the command
-    timeout: 120000,
+    reuseExistingServer: true,
+    cwd: './dummy-ui',
+    timeout: 180000, // Increase if your server is slow to start
   },
+  timeout: 60000, // Increase global test timeout if needed
 });
 

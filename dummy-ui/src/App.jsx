@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AboutUs from './AboutUs.jsx';
+import ContactUs from './ContactUs.jsx';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <nav>
           <button onClick={() => setPage('home')}>Home</button>
           <button onClick={() => setPage('about')}>About Us</button>
+          <button onClick={() => setPage('contact')}>Contact Us</button>
         </nav>
       
       <input 
@@ -54,6 +56,7 @@ function App() {
       </button>
 
       {page === 'about' && <AboutUs />}
+      {page === 'contact' && <ContactUs />}
 
       {showMessage && (
         <p id="secret-message" style={{ color: 'green', marginTop: '20px' }}>
@@ -78,11 +81,10 @@ function App() {
         )}
 
         {apiData && (
-          <div id="api-result-container" style={{ marginTop: '20px', padding: '15px', border: '1px solid #4CAF50', borderRadius: '4px', backgroundColor: '#f0f8f0' }}>
-            <h3 style={{ marginTop: '0' }}>API Response:</h3>
-            <p><strong>ID:</strong> {apiData.id}</p>
-            <p><strong>Title:</strong> {apiData.title}</p>
-            <p><strong>Body:</strong> {apiData.body}</p>
+          <div id="api-result-container">
+            <h2>{apiData.title}</h2>
+            <p>{apiData.body}</p>
+            <p>ID: {apiData.id}</p>
           </div>
         )}
       </div>
