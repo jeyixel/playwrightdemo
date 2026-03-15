@@ -14,7 +14,6 @@ playwright/.cache/
 playwright/.auth/
 
 # Environment files
-.env
 .env.*.local
 
 # Coverage, build and caches
@@ -25,7 +24,6 @@ build/
 .cache/
 
 # Editor directories and OS files
-.vscode/
 .idea/
 .DS_Store
 Thumbs.db
@@ -33,3 +31,4 @@ Thumbs.db
 # Misc
 *.log
 
+config.bat
