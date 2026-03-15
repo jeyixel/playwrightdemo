@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import AboutUs from './AboutUs.jsx';
+
 
 function App() {
   const [showMessage, setShowMessage] = useState(false);
   const [apiData, setApiData] = useState(null);
   const [apiError, setApiError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+    const [page, setPage] = useState('home');
+  
 
   const fetchApiData = async () => {
     setIsLoading(true);
@@ -30,6 +34,10 @@ function App() {
   return (
     <div style={{ padding: '50px' }}>
       <h1>Quality Engineering Practice</h1>
+        <nav>
+          <button onClick={() => setPage('home')}>Home</button>
+          <button onClick={() => setPage('about')}>About Us</button>
+        </nav>
       
       <input 
         type="text" 
@@ -44,6 +52,8 @@ function App() {
       >
         Reveal Secret
       </button>
+
+      {page === 'about' && <AboutUs />}
 
       {showMessage && (
         <p id="secret-message" style={{ color: 'green', marginTop: '20px' }}>
